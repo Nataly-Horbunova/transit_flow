@@ -61,7 +61,7 @@
   font-style: normal;
   font-display: swap;
 }
-.hero-section .hero-description .container h1 {
+.pricing-section .container .pricing-list-item-price .price-value, .hero-section .hero-description .container h1 {
   font-size: clamp(30px, 4.5833333333vw, 55px);
   line-height: 133%;
   font-weight: 700;
@@ -73,19 +73,25 @@
   font-weight: 600;
 }
 
+.pricing-section .container .pricing-list-item-tittle {
+  font-size: clamp(28px, 2.5vw, 30px);
+  line-height: 133%;
+  font-weight: 500;
+}
+
 .card-tittle {
   font-size: clamp(22px, 2.0833333333vw, 25px);
   line-height: 133%;
   font-weight: 400;
 }
 
-.work-section .container .work-section-list-item .work-section-card figcaption .work-section-card-tittle {
+.pricing-section .container .pricing-list-item-price .price-text, .work-section .container .work-section-list-item .work-section-card figcaption .work-section-card-tittle {
   font-size: clamp(18px, 1.6666666667vw, 20px);
   line-height: 120%;
   font-weight: 400;
 }
 
-.work-section .container .work-section-list-item .work-section-card figcaption .work-section-card-text, .hero-section .hero-description .container p, .hero-section .nav-and-socials .container .header-nav-list-item .header-nav-list-link, .subtittle, .btn, body {
+.pricing-section .container .pricing-list-item .pricing-features-list, .work-section .container .work-section-list-item .work-section-card figcaption .work-section-card-text, .hero-section .hero-description .container p, .hero-section .nav-and-socials .container .header-nav-list-item .header-nav-list-link, .subtittle, body, .btn-dark, .btn-light {
   font-size: clamp(14px, 1.3333333333vw, 16px);
   line-height: 133%;
 }
@@ -93,6 +99,16 @@
 .hero-section .header .contacts-and-logo-section .container .header-contacts-list-item .header-contacts-text {
   font-size: clamp(12px, 1.1666666667vw, 14px);
   line-height: 120%;
+}
+
+.btn-dark, .btn-light {
+  font-family: "Krub", sans-serif;
+  padding: clamp(10px, 1.6666666667vw, 20px) clamp(26px, 3.8333333333vw, 46px);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  transition: 0.3s ease-in;
 }
 
 * {
@@ -131,23 +147,27 @@ ul {
   list-style: none;
 }
 
-.btn {
-  font-family: "Krub", sans-serif;
-  padding: clamp(10px, 1.6666666667vw, 20px) clamp(26px, 3.8333333333vw, 46px);
-  font-weight: 600;
+.btn-light {
   color: #ffffff;
   background: linear-gradient(45deg, #FFB629, #FFDA56, #FFD7A6);
-  cursor: pointer;
-  border: none;
-  border-radius: 0;
-  transition: 0.3s ease-in;
 }
-.btn .btn a {
-  transition: 0.3s ease-in;
-}
-.btn:hover {
+.btn-light:hover {
   background: linear-gradient(45deg, #FFD7A6, #FFDA56, #FFB629);
   transform: scale(1.02);
+}
+
+.btn-dark {
+  background: linear-gradient(45deg, #091242, #1C1F35, #666C89);
+  color: #ffffff;
+}
+.btn-dark:hover {
+  background: linear-gradient(45deg, #666C89, #1C1F35, #091242);
+  transform: scale(1.02);
+}
+
+.btn-light a,
+.btn-dark a {
+  transition: 0.3s ease-in;
 }
 
 .section-tittle {
@@ -405,14 +425,6 @@ ul {
   border-left: 1px solid #D8D8D8;
 }
 
-@media screen and (max-width: 1024px) {
-  .services-section .container {
-    flex-direction: column;
-  }
-  .services-section .container .services-heading {
-    flex-basis: auto;
-  }
-}
 .work-section {
   background: linear-gradient(#ffffff 0%, #ffffff 50%, #FFD7A6 50%, #FFDA56 75%, #FFB629 100%);
   padding-bottom: clamp(25px, 2.9069767442vw, 50px);
@@ -490,15 +502,89 @@ ul {
   color: #FFBE34;
   font-weight: 500;
 }
-.work-section .container .btn {
+.work-section .container .btn-dark {
   margin-top: clamp(25px, 2.9069767442vw, 50px);
-  background: linear-gradient(45deg, #091242, #1C1F35, #666C89);
-  color: #ffffff;
-}
-.work-section .container .btn:hover {
-  background: linear-gradient(45deg, #666C89, #1C1F35, #091242);
 }
 
+.pricing-section .container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+}
+.pricing-section .container .pricing-tittle {
+  margin-top: 15px;
+}
+.pricing-section .container .pricing-list {
+  margin-top: clamp(24px, 3.8333333333vw, 46px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 28px;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+.pricing-section .container .pricing-list-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 28px;
+  padding: clamp(24px, 4.3333333333vw, 52px);
+  flex-grow: 1;
+  transition: 0.3s ease-in;
+}
+.pricing-section .container .pricing-list-item:hover {
+  transform: scale(1.1);
+}
+.pricing-section .container .pricing-list-item:nth-child(odd) {
+  background-color: #F4F4F4;
+  color: #091242;
+}
+.pricing-section .container .pricing-list-item:nth-child(odd) .pricing-features-list-item {
+  border-top: 1px solid #D6D6D6;
+}
+.pricing-section .container .pricing-list-item:nth-child(odd) .pricing-features-list-item:last-child {
+  border-bottom: 1px solid #D6D6D6;
+}
+.pricing-section .container .pricing-list-item:nth-child(even) {
+  background-color: #091242;
+  color: #ffffff;
+}
+.pricing-section .container .pricing-list-item:nth-child(even) .pricing-features-list-item {
+  border-top: 1px solid #1F2A69;
+}
+.pricing-section .container .pricing-list-item:nth-child(even) .pricing-features-list-item:last-child {
+  border-bottom: 1px solid #1F2A69;
+}
+.pricing-section .container .pricing-list-item-tittle {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+.pricing-section .container .pricing-list-item-price .price-value {
+  font-family: "Rubik", sans-serif;
+}
+.pricing-section .container .pricing-list-item .pricing-features-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: column;
+  font-family: "Rubik", sans-serif;
+}
+.pricing-section .container .pricing-list-item .pricing-features-list-item {
+  padding: 8px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .services-section .container {
+    flex-direction: column;
+  }
+  .services-section .container .services-heading {
+    flex-basis: auto;
+  }
+}
 @media screen and (max-width: 768px) {
   .services-section .container .services-list-item {
     flex-basis: 100%;

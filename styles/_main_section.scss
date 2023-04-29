@@ -44,22 +44,9 @@
   }
 }
 
-// ================== SERVICES SECTION ===================
-
-
-@media screen and (max-width: 1024px) {
-  .services-section {
-    .container {
-      flex-direction: column;
-
-      .services-heading {
-        flex-basis: auto;
-      }
-    }
-  }
-}
 
 //==================== WORK SECTION ====================
+
 .work-section {
   background: linear-gradient(#ffffff 0%, #ffffff 50%, $gradient-color-3 50%, $gradient-color-2 75%, $gradient-color-1 100%);
   padding-bottom: clamp(25px, calc(50 / 1720 * 100vw), 50px);
@@ -117,7 +104,6 @@
             }
           }
 
-
           figcaption {
             position: absolute;
             left: 0;
@@ -147,19 +133,116 @@
       }
     }
 
-    .btn {
+    .btn-dark {
       margin-top: clamp(25px, calc(50 / 1720 * 100vw), 50px);
-      background: linear-gradient(45deg, $primary-color-1, $heading-color, $paragraph-color);
-      color: $secondary-color;
 
-      &:hover {
-        background: linear-gradient(45deg, $paragraph-color, $heading-color, $primary-color-1);
+    }
+  }
+}
+
+//  =================== PRICING SECTION ===================
+.pricing-section {
+  .container {
+    @include flex(flex-start, center, 0, column);
+
+    .pricing-tittle {
+      margin-top: 15px;
+    }
+
+    .pricing-list {
+      margin-top: clamp(24px, calc(46 / 1200 * 100vw), 46px);
+      @include flex(space-between, flex-start, 28px);
+      align-self: stretch;
+      flex-wrap: wrap;
+
+      &-item {
+        @include flex(flex-start, center, 28px, column);
+        padding: clamp(24px, calc(52 / 1200 * 100vw), 52px);
+        flex-grow: 1;
+        transition: 0.3s ease-in;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        &:nth-child(odd) {
+          background-color: #F4F4F4;
+          color: $primary-color-1;
+
+          .pricing-features-list {
+            &-item {
+              border-top: 1px solid #D6D6D6;
+
+              &:last-child{
+                border-bottom: 1px solid #D6D6D6;
+              }
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          background-color: $primary-color-1;
+          color: $secondary-color;
+
+          .pricing-features-list {
+            &-item {
+              border-top: 1px solid #1F2A69;
+
+              &:last-child{
+                border-bottom: 1px solid #1F2A69;
+              }
+            }
+          }
+        }
+
+        &-tittle {
+          @extend %heading-4;
+          font-family: "Rubik", sans-serif;
+          font-weight: 500;
+        }
+
+        &-price {
+          .price-value {
+            font-family: 'Rubik', sans-serif;
+            @extend %display-text;
+          }
+
+          .price-text {
+            @extend %heading-6;
+          }
+        }
+
+        .pricing-features-list {
+          @include flex(space-between, stretch, null, column);
+          @extend %paragraph-1;
+          font-family: "Rubik", sans-serif;
+
+          &-item {
+            padding: 8px;
+            text-align: center;
+          }
+        }
+
 
       }
     }
   }
 }
 
+
+// ================= MEDIA QUERIES ==================
+
+@media screen and (max-width: 1024px) {
+  .services-section {
+    .container {
+      flex-direction: column;
+
+      .services-heading {
+        flex-basis: auto;
+      }
+    }
+  }
+}
 
 
 @media screen and (max-width: 768px) {
@@ -173,18 +256,14 @@
     }
   }
 
-.work-section{
-  .container{
-    .work-section-list{
-      flex-wrap: wrap;
-      justify-content: center;
+  .work-section {
+    .container {
+      .work-section-list {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
   }
-}
-
-
-
-
 
 
 }
