@@ -1,0 +1,222 @@
+.hero-section {
+  height: clamp(500px, calc(700 / 1200 * 100vw), 700px);
+  padding-top: 154px;
+  @include flex(center, center);
+  //transition:  0.5s ease-in-out;
+
+  .header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    .contacts-and-logo-section {
+      background-color: $primary-color-1;
+      padding: 16px 0;
+
+      .container {
+        @include flex(space-between, center, 30px);
+
+        .header-logo {
+          width: 210px;
+          height: 100%;
+        }
+
+        .header-contacts-list {
+          @include flex(space-between, center, 40px);
+
+          &-item {
+            @include flex(space-between, center, 16px);
+
+            .header-contacts-icon {
+              width: 63px;
+              height: 63px;
+              transition: 0.3s ease-in;
+
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+
+            .header-contacts-text {
+              color: $secondary-color;
+              font-weight: 500;
+              @extend %paragraph-2;
+              transition: 0.3s ease-in;
+              cursor: pointer;
+
+              &:hover {
+                color: $primary-color-2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav-and-socials {
+    background-color: rgba(9, 18, 66, 0.75);
+    padding: 24px 0;
+
+    .container {
+      @include flex(space-between, center);
+
+      .header-nav {
+        background-color: transparent !important;
+
+        .burger-menu {
+          &-icon {
+            background-image: url('../assets/bars.svg') !important;
+          }
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+
+        &-list {
+          &-item {
+            padding: 0 24px;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+            .header-nav-list-link.active{
+              color: $primary-color-2;
+            }
+
+            .header-nav-list-link {
+              color: $secondary-color;
+              @extend %paragraph-1;
+              font-weight: 600;
+              transition: 0.3s ease-in;
+
+              &:hover {
+                color: $primary-color-2;
+              }
+            }
+          }
+
+          &-item:first-child {
+            padding-left: 0;
+          }
+
+          &-item:last-child {
+            border-right: none;
+          }
+        }
+      }
+
+      .header-socials-list {
+        @include flex(space-between, center, 24px);
+        padding-top: 20px;
+        align-self: flex-start;
+
+        &-item {
+          height: 20px;
+          width: 100%;
+          text-align: center;
+          transition: 0.3s ease-in;
+
+          &:hover a svg path {
+            fill: $primary-color-2;
+          }
+
+          a, a svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+
+          a svg path {
+            transition: 0.3s ease-in;
+          }
+
+
+        }
+      }
+    }
+  }
+
+  .hero-description {
+    .container {
+      @include flex(space-between, flex-start, 20px, column);
+      color: $secondary-color;
+
+      h1 {
+        font-family: 'Rubik', sans-serif;
+        max-width: 40%;
+        @extend %display-text;
+      }
+
+      p {
+        max-width: 40%;
+        @extend %paragraph-1;
+      }
+
+    }
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .hero-section {
+    padding-top: 190px;
+
+    .header {
+      .contacts-and-logo-section {
+        .container {
+          @include flex(space-between, flex-start, 10px, column);
+
+          .header-contacts-list-item .header-contacts-icon {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+
+    .hero-description .container h1,
+    .hero-description .container p {
+      max-width: 70%;
+    }
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+  .hero-section {
+    .nav-and-socials {
+      .container {
+        .header-nav {
+          &-list {
+            &-item:first-child {
+              padding-left: 24px;
+            }
+
+            &-item:last-child {
+              border-right: 1px solid rgba(255, 255, 255, 0.2);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .hero-section {
+    padding-top: 154px;
+
+    .header .contacts-and-logo-section .container .header-contacts-list {
+      display: none;
+
+    }
+
+    .hero-description .container h1,
+    .hero-description .container p {
+      max-width: 100%;
+    }
+
+  }
+}

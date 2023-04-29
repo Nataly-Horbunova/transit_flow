@@ -1,0 +1,190 @@
+//==================== SERVICES SECTION ===================
+
+.services-section {
+  margin-top: clamp(30px, calc(100 / 1200 * 100vw), 100px);
+
+  .container {
+    display: flex;
+    gap: 33px;
+
+    .services-heading {
+      flex-basis: 300px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .services-subtittle {
+        align-self: flex-start;
+
+      }
+    }
+
+    .services-list {
+      @include flex(space-between, flex-start, clamp(10px, calc(80 / 1200 * 100vw), 80px));
+      flex-wrap: wrap;
+
+      &-item {
+        flex-basis: calc(50% - clamp(10px, calc(80 / 1200 * 100vw), 80px));
+        @include flex(space-between, flex-start, 16px);
+
+        & img {
+          width: 76px;
+          flex-shrink: 0;
+        }
+
+        & .services-info {
+          @include flex(flex-start, flex-start, 13px, column);
+          padding-left: 25px;
+          border-left: 1px solid #D8D8D8;
+
+        }
+      }
+    }
+  }
+}
+
+// ================== SERVICES SECTION ===================
+
+
+@media screen and (max-width: 1024px) {
+  .services-section {
+    .container {
+      flex-direction: column;
+
+      .services-heading {
+        flex-basis: auto;
+      }
+    }
+  }
+}
+
+//==================== WORK SECTION ====================
+.work-section {
+  background: linear-gradient(#ffffff 0%, #ffffff 50%, $gradient-color-3 50%, $gradient-color-2 75%, $gradient-color-1 100%);
+  padding-bottom: clamp(25px, calc(50 / 1720 * 100vw), 50px);
+
+  .container {
+    @include flex(flex-start, center, null, column);
+    max-width: 1720px;
+    padding: 0 clamp(16px, calc(40 / 1720 * 100vw), 40px);
+
+    .work-section-list {
+      @include flex(space-between, flex-start, 18px);
+      margin-top: 35px;
+
+      &-item {
+        max-width: 280px;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:hover .work-section-card-img-wrapper img {
+          transform: scale(1.1);
+        }
+
+        .work-section-card {
+          position: relative;
+          width: 100%;
+
+          &:hover figcaption {
+            transform: translateY(0);
+            opacity: 1;
+          }
+
+          .work-section-card-img-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              top: 0;
+              background: linear-gradient(0deg, #091242 14.34%, rgba(60, 60, 60, 0) 43.86%);
+              z-index: 30;
+            }
+
+            img {
+              display: block;
+              width: 100%;
+              object-fit: cover;
+              z-index: 1;
+              transition: 0.8s ease-in;
+            }
+          }
+
+
+          figcaption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: translateY(100%);
+            opacity: 0;
+            background-color: transparentize($paragraph-color, 0.9);
+            padding: 20px 25px;
+            z-index: 50;
+            transition: 0.5s ease-in;
+
+            .work-section-card-tittle {
+              @extend %heading-6;
+              font-weight: 500;
+              color: $secondary-color;
+            }
+
+            .work-section-card-text {
+              color: $primary-color-2;
+              @extend %paragraph-1;
+              font-weight: 500;
+            }
+          }
+        }
+
+      }
+    }
+
+    .btn {
+      margin-top: clamp(25px, calc(50 / 1720 * 100vw), 50px);
+      background: linear-gradient(45deg, $primary-color-1, $heading-color, $paragraph-color);
+      color: $secondary-color;
+
+      &:hover {
+        background: linear-gradient(45deg, $paragraph-color, $heading-color, $primary-color-1);
+
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .services-section {
+    .container {
+      .services-list {
+        &-item {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
+.work-section{
+  .container{
+    .work-section-list{
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+
+
+
+
+
+}

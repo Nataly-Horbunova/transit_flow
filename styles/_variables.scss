@@ -1,0 +1,28 @@
+// ----------------- Fonts ----------------
+
+$fz-xxxl: clamp(30px, calc(55 / 1200 * 100vw), 55px);
+$fz-xxl: clamp(35px, calc(50 / 1200 * 100vw), 50px);
+$fz-xl: clamp(30px, calc(40 / 1200 * 100vw), 40px);
+$fz-l: clamp(26px, calc(35 / 1200 * 100vw), 35px);
+$fz-m: clamp(28px, calc(30 / 1200 * 100vw), 30px);
+$fz-xm: clamp(22px, calc(25 / 1200 * 100vw), 25px);
+$fz-s: clamp(18px, calc(20 / 1200 * 100vw), 20px);
+$fz-xs: clamp(14px, calc(16 / 1200 * 100vw), 16px);
+$fz-xxs: clamp(12px, calc(14 / 1200 * 100vw), 14px);
+
+$lh-l: 150%;
+$lh-m: 133%;
+$lh-s: 120%;
+
+// -------------- Colors ---------------
+
+$primary-color-1: #091242;
+$primary-color-2: #FFBE34;
+
+$heading-color: #1C1F35;
+$paragraph-color: #666C89;
+$secondary-color: #ffffff;
+
+$gradient-color-1: #FFB629;
+$gradient-color-2: #FFDA56;
+$gradient-color-3: #FFD7A6;

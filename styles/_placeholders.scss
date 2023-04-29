@@ -1,0 +1,55 @@
+// --------------- Headings ---------------
+%display-text {
+  font-size: $fz-xxxl;
+  line-height: $lh-m;
+  font-weight: 700;
+}
+
+%heading-1 {
+  font-size: $fz-xxl;
+  line-height: $lh-m;
+  font-weight: 600;
+}
+
+%heading-2 {
+  font-size: $fz-xl;
+  line-height: $lh-m;
+  font-weight: 600;
+}
+
+%heading-3 {
+  font-size: $fz-l;
+  line-height: $lh-m;
+  font-weight: 600;
+}
+
+%heading-4 {
+  font-size: $fz-m;
+  line-height: $lh-m;
+  font-weight: 500;
+}
+
+%heading-5 {
+  font-size: $fz-xm;
+  line-height: $lh-m;
+  font-weight: 400;
+}
+
+%heading-6 {
+  font-size: $fz-s;
+  line-height: $lh-s;
+  font-weight: 400;
+}
+
+//----------- Paragraphs ----------------
+
+%paragraph-1 {
+  font-size: $fz-xs;
+  line-height: $lh-m;
+}
+
+%paragraph-2 {
+  font-size: $fz-xxs;
+  line-height: $lh-s;
+}
+
