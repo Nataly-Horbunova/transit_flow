@@ -38,7 +38,7 @@ ul {
 
 .btn-light {
   @extend %button;
-  color: $secondary-color;
+  color: $primary-color-1;
   background: linear-gradient(45deg, $gradient-color-1, $gradient-color-2, $gradient-color-3);
 
   &:hover {
