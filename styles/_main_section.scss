@@ -173,7 +173,7 @@
             &-item {
               border-top: 1px solid #D6D6D6;
 
-              &:last-child{
+              &:last-child {
                 border-bottom: 1px solid #D6D6D6;
               }
             }
@@ -188,7 +188,7 @@
             &-item {
               border-top: 1px solid #1F2A69;
 
-              &:last-child{
+              &:last-child {
                 border-bottom: 1px solid #1F2A69;
               }
             }
@@ -229,6 +229,105 @@
   }
 }
 
+// ================ TESTIMONIALS SECTION ==================
+.testimonial-section {
+  .container {
+    @include flex(space-between, flex-start, null, column);
+
+    .testimolial-subtittle {
+      align-self: flex-start;
+    }
+
+    .testimonial-tittle {
+      margin-top: 15px;
+    }
+
+    .testimonials-slider {
+      margin-top: 40px;
+
+      .slider-container {
+        & li:nth-child(even) {
+          .testimonial-card {
+            background-color: #F4F4F4;
+
+            .testimonial-card-tittle {
+              .testimonial-card-name {
+                color: $primary-color-1;
+              }
+
+              .testimonial-card-company {
+                @extend %paragraph-1;
+                color: $primary-color-1;
+              }
+            }
+          }
+        }
+
+        & li:nth-child(odd) {
+          .testimonial-card {
+            background-color: $primary-color-1;
+            color: $secondary-color;
+          }
+        }
+      }
+
+      .testimonial-card {
+        @include flex(flex-start, flex-start, 24px, column);
+        padding: 60px;
+
+        .testimonial-card-header {
+          @include flex(space-between, center, 16px);
+          align-self: stretch;
+
+          &-info {
+            @include flex(space-between, center, 10px);
+
+            .testimonial-card-tittle {
+              .testimonial-card-name {
+                @extend %heading-6;
+                font-weight: 500;
+                font-family: "Rubik", sans-serif;
+              }
+
+              .testimonial-card-company {
+                @extend %paragraph-1;
+                font-weight: 500;
+              }
+            }
+
+            & .testimonial-card-img-wrapper {
+              border-radius: 50%;
+              width: 90px;
+              height: 90px;
+              overflow: hidden;
+
+              & img {
+                display: block;
+                width: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+
+          .testimonial-card-quote-icon {
+            display: block;
+            width: 72px;
+            height: auto;
+
+          }
+        }
+
+        .testimonial-card-text {
+          font-weight: 500;
+          font-style: italic;
+        }
+      }
+
+    }
+
+  }
+}
+
 
 // ================= MEDIA QUERIES ==================
 
@@ -266,4 +365,16 @@
   }
 
 
+}
+
+
+@media screen and (max-width: 425px) {
+  .testimonial-section
+  .container
+  .testimonials-slider
+  .testimonial-card
+  .testimonial-card-header
+  .testimonial-card-quote-icon {
+    display: none;
+  }
 }

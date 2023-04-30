@@ -30,25 +30,13 @@
             @include flex(space-between, center, 16px);
 
             .header-contacts-icon {
+              @extend %contacts-icon;
               width: 63px;
               height: 63px;
-              transition: 0.3s ease-in;
-
-              &:hover {
-                transform: scale(1.1);
-              }
             }
 
             .header-contacts-text {
-              color: $secondary-color;
-              font-weight: 500;
-              @extend %paragraph-2;
-              transition: 0.3s ease-in;
-              cursor: pointer;
-
-              &:hover {
-                color: $primary-color-2;
-              }
+              @extend %contacts-text;
             }
           }
         }
@@ -81,7 +69,7 @@
             padding: 0 24px;
             border-right: 1px solid rgba(255, 255, 255, 0.2);
 
-            .header-nav-list-link.active{
+            .header-nav-list-link.active {
               color: $primary-color-2;
             }
 
@@ -113,26 +101,7 @@
         align-self: flex-start;
 
         &-item {
-          height: 20px;
-          width: 100%;
-          text-align: center;
-          transition: 0.3s ease-in;
-
-          &:hover a svg path {
-            fill: $primary-color-2;
-          }
-
-          a, a svg {
-            display: block;
-            width: 100%;
-            height: 100%;
-          }
-
-          a svg path {
-            transition: 0.3s ease-in;
-          }
-
-
+          @extend %socials-item;
         }
       }
     }

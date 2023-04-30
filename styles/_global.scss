@@ -8,13 +8,12 @@ body {
   background-color: $secondary-color;
   color: $paragraph-color;
   @extend %paragraph-1;
-  padding-bottom: 100px;
 }
 
 
 .container {
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 1200px;
   padding: 0 clamp(16px, calc(40 / 1200 * 100vw), 40px);
 }
 
@@ -58,42 +57,42 @@ ul {
   }
 }
 
-  .btn-light a,
-  .btn-dark a {
-    transition: 0.3s ease-in;
-  }
+.btn-light a,
+.btn-dark a {
+  transition: 0.3s ease-in;
+}
 
 
-  .section-tittle {
-    font-family: 'Rubik', sans-serif;
-    @extend %heading-3;
-    color: $heading-color;
-  }
+.section-tittle {
+  font-family: 'Rubik', sans-serif;
+  @extend %heading-3;
+  color: $heading-color;
+}
 
-  .subtittle {
-    font-family: 'Rubik', sans-serif;
-    padding: 4px 10px;
-    background-color: rgba(232, 232, 232, 0.5);
-    border-left: 4px solid $gradient-color-1;
-    @extend %paragraph-1;
-    color: $heading-color;
-  }
+.subtittle {
+  font-family: 'Rubik', sans-serif;
+  padding: 4px 10px;
+  background-color: rgba(232, 232, 232, 0.5);
+  border-left: 4px solid $gradient-color-1;
+  @extend %paragraph-1;
+  color: $heading-color;
+}
 
-  .card-tittle {
-    font-family: 'Rubik', sans-serif;
-    @extend %heading-5;
-    color: $heading-color;
-  }
+.card-tittle {
+  font-family: 'Rubik', sans-serif;
+  @extend %heading-5;
+  color: $heading-color;
+}
 
-  .scroll-btn {
-    @include flex(center, center);
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(45deg, $gradient-color-1, $gradient-color-2, $gradient-color-3);
-    border: 1px solid transparentize($primary-color-1, 0.8);
-    padding: 10px;
-    z-index: 999;
-  }
+.scroll-btn {
+  @include flex(center, center);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, $gradient-color-1, $gradient-color-2, $gradient-color-3);
+  border: 1px solid transparentize($primary-color-1, 0.8);
+  padding: 10px;
+  z-index: 999;
+}

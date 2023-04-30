@@ -58,11 +58,55 @@
 
 %button {
   font-family: "Krub", sans-serif;
-  padding: clamp(10px, calc(20 / 1200 * 100vw), 20px) clamp(26px, calc(46 / 1200 * 100vw), 46px);
+  padding: clamp(10px, calc(16 / 1200 * 100vw), 16px) clamp(16px, calc(36 / 1200 * 100vw), 36px);
   @extend %paragraph-1;
   font-weight: 600;
   cursor: pointer;
   border: none;
   border-radius: 0;
   transition: 0.3s ease-in;
+}
+
+// --------------- Contacts --------------------
+%contacts-icon {
+  transition: 0.3s ease-in;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+%contacts-text {
+  color: $secondary-color;
+  font-weight: 500;
+  @extend %paragraph-2;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary-color-2;
+  }
+}
+
+//  ------------- Socials --------------------
+%socials-item {
+  height: 20px;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s ease-in;
+
+  &:hover a svg path {
+    fill: $primary-color-2;
+  }
+
+  a, a svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  a svg path {
+    transition: 0.3s ease-in;
+  }
+
 }
