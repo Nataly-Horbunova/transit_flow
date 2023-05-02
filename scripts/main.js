@@ -1,3 +1,7 @@
+// =========================== AOS ========================
+
+AOS.init();
+
 // ==============  HERO BACKGROUND ANIMATION  ===============
 
 fetch('data.json')
@@ -23,8 +27,9 @@ fetch('data.json')
 //============== NAV MENU =================
 
 document.querySelector('.header-nav-list').addEventListener('click', (e) => {
-    if(e.target.nodeName !== "A") return;
-    console.log(e.target.nodeName);
+
+    if (e.target.nodeName !== "A") return;
+
     const menuItems = document.querySelectorAll('.header-nav-list-link');
     menuItems.forEach((item) => {
         item.style.color = `#ffffff`;
@@ -39,7 +44,7 @@ const scrollBtn = document.querySelector('.scroll-btn');
 let scrollUp;
 
 scrollBtn.addEventListener('click', () => {
-    if(scrollUp) {
+    if (scrollUp) {
         scrollBtn.firstElementChild.src = `./assets/chevron-up.svg`;
         scrollToBottom();
     } else {
@@ -63,3 +68,29 @@ function scrollToBottom() {
         behavior: 'smooth'
     });
 }
+
+// ------------------ Form validation ------------
+const formModal = document.forms.contactModal;
+
+function validateFormTel(formName) {
+    formName.tel.addEventListener('invalid', function ({target}) {
+        target.setCustomValidity('Please enter your number in format: +380XXXXXXXXX');
+    });
+}
+
+validateFormTel(formModal);
+
+
+// =============== CONTACT POP-UP =============
+const contactPopUp = document.querySelector('.contact-pop-up');
+const contactOverlay = document.querySelector('.contact-modal-overlay');
+
+contactPopUp.addEventListener('click', () => {
+    contactOverlay.classList.add('active');
+})
+
+contactOverlay.addEventListener('click', ({target}) => {
+    if(target.tagName !== 'DIV') return;
+        contactOverlay.classList.remove('active');
+    }
+);

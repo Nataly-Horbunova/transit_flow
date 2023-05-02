@@ -2,7 +2,7 @@
   height: clamp(500px, calc(700 / 1200 * 100vw), 700px);
   padding-top: 154px;
   @include flex(center, center);
-  //transition:  0.5s ease-in-out;
+
 
   .header {
     position: fixed;

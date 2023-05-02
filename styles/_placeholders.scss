@@ -110,3 +110,17 @@
   }
 
 }
+
+// ----------------- Input ----------------
+%input {
+  padding: 20px 30px;
+  background-color: $primary-color-1;
+  border: 1px solid #E0E0E0;
+  color: $secondary-color;
+  @extend %paragraph-1;
+
+  &::placeholder {
+    color: $secondary-color;
+    @extend %paragraph-1;
+  }
+}

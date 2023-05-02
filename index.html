@@ -18,6 +18,14 @@
     <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
           crossorigin="anonymous">
 
+    <!--  =============================== AOS ==========================  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!--   =============================== Animate Css ====================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+          integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
     <!-- ============================ Custom styles ===========================  -->
     <link rel="stylesheet" href="./styles/main.css">
 
@@ -28,7 +36,7 @@
     <header class="header">
         <div class="contacts-and-logo-section">
             <div class="container">
-                <img src="./assets/logo.svg" alt="logo" class="header-logo">
+                <a href="./index.html"><img src="./assets/logo.svg" alt="logo" class="header-logo"></a>
                 <ul class="header-contacts-list">
                     <li class="header-contacts-list-item">
                         <img src="./assets/schedule_icon.svg" alt="schedule icon" class="header-contacts-icon">
@@ -70,7 +78,7 @@
                                     <a class="nav-link header-nav-list-link" href="#testimonial">Testimonial</a>
                                 </li>
                                 <li class="nav-item header-nav-list-item">
-                                    <a class="nav-link header-nav-list-link" href="./contact.html">Contact</a>
+                                    <a class="nav-link header-nav-list-link" href="contact.html">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -249,8 +257,44 @@
                         </figcaption>
                     </figure>
                 </li>
+                <li class="work-section-list-item">
+                    <figure class="work-section-card">
+                        <div class="work-section-card-img-wrapper">
+                            <img src="./assets/work/warehouse.png" alt="Warehouse & Distribution"
+                                 class="work-section-card-img">
+                        </div>
+                        <figcaption>
+                            <h4 class="work-section-card-tittle">Warehouse & Distribution</h4>
+                            <span class="work-section-card-text">Large Warehouse</span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="work-section-list-item">
+                    <figure class="work-section-card">
+                        <div class="work-section-card-img-wrapper">
+                            <img src="./assets/work/packaging-solutions.png" alt="Packaging Solutions"
+                                 class="work-section-card-img">
+                        </div>
+                        <figcaption>
+                            <h4 class="work-section-card-tittle">Packaging Solutions</h4>
+                            <span class="work-section-card-text">Warehouse Management</span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="work-section-list-item">
+                    <figure class="work-section-card">
+                        <div class="work-section-card-img-wrapper">
+                            <img src="./assets/work/spec_transport.png" alt="Specialized Transport"
+                                 class="work-section-card-img">
+                        </div>
+                        <figcaption>
+                            <h4 class="work-section-card-tittle">Specialized Transport</h4>
+                            <span class="work-section-card-text">Ocean Transports</span>
+                        </figcaption>
+                    </figure>
+                </li>
             </ul>
-            <button class="btn-dark">More Work</button>
+            <button class="load-more-btn btn-dark">More Work</button>
         </div>
     </section>
 
@@ -549,7 +593,7 @@
                         <li class="footer-nav-list-item"><a href="#" class="footer-nav-list-link">Licenses</a></li>
                         <li class="footer-nav-list-item"><a href="#" class="footer-nav-list-link">Protection</a></li>
                         <li class="footer-nav-list-item"><a href="#" class="footer-nav-list-link">FAQ</a></li>
-                        <li class="footer-nav-list-item"><a href="./contact.html"
+                        <li class="footer-nav-list-item"><a href="contact.html"
                                                             class="footer-nav-list-link">Contact</a></li>
                     </ul>
                 </nav>
@@ -609,9 +653,33 @@
     <img src="./assets/chevron-up.svg" alt="chevron up" class="scroll-btn-img">
 </div>
 
+
+<div class="contact-pop-up animate__animated animate__headShake animate__infinite	">
+    <img src="./assets/phone_icon.svg" alt="phone icon" class="contacts-pop-up-icon">
+</div>
+<div class="contact-modal-overlay">
+    <form class="contacts-form" name="contactModal">
+        <input name="name" type="text" class="contacts-name" placeholder="Your name*" required>
+        <input name="email" type="email" class="contacts-email" placeholder="Your email*" required>
+        <input name="tel" type="text" class="contacts-tel" placeholder="Phone Number*" pattern="^\+380\d{9}$" required>
+        <input name="city" type="text" class="contacts-city" placeholder="City*" required>
+        <textarea name="message" class="contacts-message" placeholder="Your Message" required></textarea>
+        <button class="submit-btn btn-light" type="submit">Submit Message</button>
+    </form>
+</div>
+
+
+<!-- ============================= Bootstrap ==========================   -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-<script src="./scripts/main.js"></script>
+
+<!--  =============================== AOS ==========================  -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!--    ===================   Custom Scripts ----------------------->
+<script src="scripts/main.js"></script>
+<script src="scripts/home.js"></script>
+
 </body>
 </html>

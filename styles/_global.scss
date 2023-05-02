@@ -8,6 +8,7 @@ body {
   background-color: $secondary-color;
   color: $paragraph-color;
   @extend %paragraph-1;
+  scroll-behavior: smooth;
 }
 
 
@@ -87,12 +88,39 @@ ul {
 .scroll-btn {
   @include flex(center, center);
   position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(45deg, $gradient-color-1, $gradient-color-2, $gradient-color-3);
-  border: 1px solid transparentize($primary-color-1, 0.8);
+  right: 20px;
+  bottom: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: $primary-color-1;
+  border: 4px solid $gradient-color-2;;
   padding: 10px;
   z-index: 999;
+  transition: 0.3s ease-in;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
+
+.contact-pop-up {
+  @include flex(center, center);
+  @extend %paragraph-1;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  background: $gradient-color-2;
+  padding: 3px;
+  z-index: 999;
+  color: $heading-color;
+  transition: 0.3s ease-in;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+
+}
+

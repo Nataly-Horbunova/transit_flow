@@ -67,7 +67,7 @@
   font-weight: 700;
 }
 
-.section-tittle {
+.contact-section .container .section-tittle, .section-tittle {
   font-size: clamp(26px, 2.9166666667vw, 35px);
   line-height: 133%;
   font-weight: 600;
@@ -91,12 +91,12 @@
   font-weight: 400;
 }
 
-.footer .footer-main-info .container .footer-info .footer-nav .footer-nav-list-item a, .testimonial-section .container .testimonials-slider .testimonial-card .testimonial-card-header-info .testimonial-card-tittle .testimonial-card-company, .testimonial-section .container .testimonials-slider .slider-container li:nth-child(even) .testimonial-card .testimonial-card-tittle .testimonial-card-company, .pricing-section .container .pricing-list-item .pricing-features-list, .work-section .container .work-section-list-item .work-section-card figcaption .work-section-card-text, .hero-section .hero-description .container p, .hero-section .nav-and-socials .container .header-nav-list-item .header-nav-list-link, .subtittle, body, .btn-dark, .btn-light {
+.footer .footer-main-info .container .footer-info .footer-nav .footer-nav-list-item a, .testimonial-section .container .testimonials-slider .testimonial-card .testimonial-card-header-info .testimonial-card-tittle .testimonial-card-company, .testimonial-section .container .testimonials-slider .slider-container li:nth-child(even) .testimonial-card .testimonial-card-tittle .testimonial-card-company, .pricing-section .container .pricing-list-item .pricing-features-list, .work-section .container .work-section-list-item .work-section-card figcaption .work-section-card-text, .hero-section .hero-description .container p, .hero-section .nav-and-socials .container .header-nav-list-item .header-nav-list-link, .contact-pop-up, .subtittle, body, .contacts-form .contacts-name::placeholder, .contacts-form .contacts-email::placeholder, .contacts-form .contacts-tel::placeholder, .contacts-form .contacts-city::placeholder, .contacts-form .contacts-message::placeholder, .contacts-form .contacts-name, .contacts-form .contacts-email, .contacts-form .contacts-tel, .contacts-form .contacts-city, .contacts-form .contacts-message, .btn-dark, .btn-light {
   font-size: clamp(14px, 1.3333333333vw, 16px);
   line-height: 133%;
 }
 
-.footer .footer-main-info .container .footer-info .footer-contacts-list .footer-contacts-list-item a, .hero-section .header .contacts-and-logo-section .container .header-contacts-list-item .header-contacts-text {
+.contact-section .container .contacts-list-item .contacts-text, .footer .footer-main-info .container .footer-info .footer-contacts-list .footer-contacts-list-item a, .hero-section .header .contacts-and-logo-section .container .header-contacts-list-item .header-contacts-text {
   font-size: clamp(12px, 1.1666666667vw, 14px);
   line-height: 120%;
 }
@@ -111,20 +111,20 @@
   transition: 0.3s ease-in;
 }
 
-.footer .footer-main-info .container .footer-info .footer-contacts-list .footer-contacts-list-item img, .hero-section .header .contacts-and-logo-section .container .header-contacts-list-item .header-contacts-icon {
+.contact-section .container .contacts-list-item .contacts-icon, .footer .footer-main-info .container .footer-info .footer-contacts-list .footer-contacts-list-item img, .hero-section .header .contacts-and-logo-section .container .header-contacts-list-item .header-contacts-icon {
   transition: 0.3s ease-in;
 }
-.footer .footer-main-info .container .footer-info .footer-contacts-list .footer-contacts-list-item img:hover, .hero-section .header .contacts-and-logo-section .container .header-contacts-list-item .header-contacts-icon:hover {
+.contact-section .container .contacts-list-item .contacts-icon:hover, .footer .footer-main-info .container .footer-info .footer-contacts-list .footer-contacts-list-item img:hover, .hero-section .header .contacts-and-logo-section .container .header-contacts-list-item .header-contacts-icon:hover {
   transform: scale(1.1);
 }
 
-.footer .footer-main-info .container .footer-info .footer-contacts-list .footer-contacts-list-item a, .hero-section .header .contacts-and-logo-section .container .header-contacts-list-item .header-contacts-text {
+.contact-section .container .contacts-list-item .contacts-text, .footer .footer-main-info .container .footer-info .footer-contacts-list .footer-contacts-list-item a, .hero-section .header .contacts-and-logo-section .container .header-contacts-list-item .header-contacts-text {
   color: #ffffff;
   font-weight: 500;
   transition: 0.3s ease-in;
   cursor: pointer;
 }
-.footer .footer-main-info .container .footer-info .footer-contacts-list .footer-contacts-list-item a:hover, .hero-section .header .contacts-and-logo-section .container .header-contacts-list-item .header-contacts-text:hover {
+.contact-section .container .contacts-list-item .contacts-text:hover, .footer .footer-main-info .container .footer-info .footer-contacts-list .footer-contacts-list-item a:hover, .hero-section .header .contacts-and-logo-section .container .header-contacts-list-item .header-contacts-text:hover {
   color: #FFBE34;
 }
 
@@ -146,6 +146,16 @@
   transition: 0.3s ease-in;
 }
 
+.contacts-form .contacts-name, .contacts-form .contacts-email, .contacts-form .contacts-tel, .contacts-form .contacts-city, .contacts-form .contacts-message {
+  padding: 20px 30px;
+  background-color: #091242;
+  border: 1px solid #E0E0E0;
+  color: #ffffff;
+}
+.contacts-form .contacts-name::placeholder, .contacts-form .contacts-email::placeholder, .contacts-form .contacts-tel::placeholder, .contacts-form .contacts-city::placeholder, .contacts-form .contacts-message::placeholder {
+  color: #ffffff;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -155,6 +165,7 @@ body {
   font-family: "Krub", sans-serif;
   background-color: #ffffff;
   color: #666C89;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -227,14 +238,37 @@ ul {
   justify-content: center;
   align-items: center;
   position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(45deg, #FFB629, #FFDA56, #FFD7A6);
-  border: 1px solid rgba(9, 18, 66, 0.2);
+  right: 20px;
+  bottom: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #091242;
+  border: 4px solid #FFDA56;
   padding: 10px;
   z-index: 999;
+  transition: 0.3s ease-in;
+}
+.scroll-btn:hover {
+  transform: scale(1.05);
+}
+
+.contact-pop-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  background: #FFDA56;
+  padding: 3px;
+  z-index: 999;
+  color: #1C1F35;
+  transition: 0.3s ease-in;
+}
+.contact-pop-up:hover {
+  transform: scale(1.05);
 }
 
 .hero-section {
@@ -438,8 +472,8 @@ ul {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  max-width: 1720px;
-  padding: 0 clamp(16px, 2.3255813953vw, 40px);
+  max-width: 1400px;
+  padding: 0 clamp(16px, 2.8571428571vw, 40px);
 }
 .work-section .container .work-section-list {
   display: flex;
@@ -447,14 +481,22 @@ ul {
   align-items: flex-start;
   gap: 18px;
   margin-top: 35px;
+  flex-wrap: wrap;
 }
 .work-section .container .work-section-list-item {
+  display: none;
+  flex-basis: calc(25% - 18px);
   max-width: 280px;
   overflow: hidden;
   cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+  transition-delay: 0.5s;
 }
 .work-section .container .work-section-list-item:hover .work-section-card-img-wrapper img {
   transform: scale(1.1);
+}
+.work-section .container .work-section-list-item.show {
+  display: block;
 }
 .work-section .container .work-section-list-item .work-section-card {
   position: relative;
@@ -671,13 +713,18 @@ ul {
     flex-basis: 100%;
   }
   .work-section .container .work-section-list {
-    flex-wrap: wrap;
     justify-content: center;
+  }
+  .work-section .container .work-section-list-item {
+    flex-basis: calc(50% - 18px);
   }
 }
 @media screen and (max-width: 425px) {
   .testimonial-section .container .testimonials-slider .testimonial-card .testimonial-card-header .testimonial-card-quote-icon {
     display: none;
+  }
+  .work-section .container .work-section-list-item {
+    flex-basis: 100%;
   }
 }
 .footer {
@@ -810,6 +857,91 @@ ul {
   }
   .footer .footer-main-info .container .footer-info .footer-subscribe {
     flex-basis: 250px;
+  }
+}
+.contact-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1000px;
+  padding: clamp(30px, 6.6666666667vw, 80px);
+  background-color: #091242;
+}
+.contact-section .container .section-tittle {
+  margin-top: 12px;
+  font-family: "Rubik", sans-serif;
+  color: #ffffff;
+}
+.contact-section .container .contact-text {
+  color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+}
+.contact-section .container .contacts-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  align-self: stretch;
+  padding: 0 44px;
+}
+.contact-section .container .contacts-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-section .container .contacts-list-item .contacts-icon {
+  width: 62px;
+}
+.contacts-form {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px 30px;
+  flex-wrap: wrap;
+}
+.contacts-form .submit-btn {
+  align-self: center;
+}
+.contacts-form .contacts-name, .contacts-form .contacts-email, .contacts-form .contacts-tel, .contacts-form .contacts-city {
+  flex-basis: calc(50% - 28px);
+  flex-grow: 1;
+}
+.contacts-form .contacts-message {
+  height: 160px;
+  flex-basis: 100%;
+}
+
+.contact-modal-overlay {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(61, 60, 60, 0.44);
+  z-index: 1001;
+}
+.contact-modal-overlay.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-modal-overlay .contacts-form {
+  max-width: 700px;
+  padding: clamp(20px, 3.3333333333vw, 40px);
+  background-color: #091242;
+}
+
+@media screen and (max-width: 425px) {
+  .contact-section .container .contacts-list-item .contacts-icon {
+    width: 30px;
   }
 }
 

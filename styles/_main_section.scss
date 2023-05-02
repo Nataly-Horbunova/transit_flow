@@ -53,20 +53,29 @@
 
   .container {
     @include flex(flex-start, center, null, column);
-    max-width: 1720px;
-    padding: 0 clamp(16px, calc(40 / 1720 * 100vw), 40px);
+    max-width: 1400px;
+    padding: 0 clamp(16px, calc(40 / 1400 * 100vw), 40px);
 
     .work-section-list {
       @include flex(space-between, flex-start, 18px);
       margin-top: 35px;
+      flex-wrap: wrap;
 
       &-item {
+        display: none;
+        flex-basis: calc(100% / 4 - 18px);
         max-width: 280px;
         overflow: hidden;
         cursor: pointer;
+        transition: opacity 0.5s ease-in-out;
+        transition-delay: 0.5s;
 
         &:hover .work-section-card-img-wrapper img {
           transform: scale(1.1);
+        }
+
+        &.show {
+          display: block;
         }
 
         .work-section-card {
@@ -328,7 +337,6 @@
   }
 }
 
-
 // ================= MEDIA QUERIES ==================
 
 @media screen and (max-width: 1024px) {
@@ -358,8 +366,10 @@
   .work-section {
     .container {
       .work-section-list {
-        flex-wrap: wrap;
         justify-content: center;
+        &-item {
+          flex-basis: calc(100% / 2 - 18px);
+        }
       }
     }
   }
@@ -377,4 +387,15 @@
   .testimonial-card-quote-icon {
     display: none;
   }
+
+  .work-section {
+    .container {
+      .work-section-list {
+        &-item {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
 }
