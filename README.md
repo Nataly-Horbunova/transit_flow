@@ -35,15 +35,15 @@ You can access the website at the following link: [Transit Flow](https://transit
 
 ## Screenshots
 
-![Home](assets/screenshots/home.png)
+![Home](src/assets/screenshots/home.png)
 _Home_
 
 
-![Testimonial](assets/screenshots/testimonial.png)
+![Testimonial](src/assets/screenshots/testimonial.png)
 _Testimonial_
 
 
-![Contact](assets/screenshots/contact.png)
+![Contact](src/assets/screenshots/contact.png)
 _Contact_
 
 
