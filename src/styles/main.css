@@ -91,6 +91,11 @@
   font-weight: 400;
 }
 
+.contacts-form .contacts-name::-moz-placeholder, .contacts-form .contacts-email::-moz-placeholder, .contacts-form .contacts-tel::-moz-placeholder, .contacts-form .contacts-city::-moz-placeholder, .contacts-form .contacts-message::-moz-placeholder {
+  font-size: clamp(14px, 1.3333333333vw, 16px);
+  line-height: 133%;
+}
+
 .footer .footer-main-info .container .footer-info .footer-nav .footer-nav-list-item a, .testimonial-section .container .testimonials-slider .testimonial-card .testimonial-card-header-info .testimonial-card-tittle .testimonial-card-company, .testimonial-section .container .testimonials-slider .slider-container li:nth-child(even) .testimonial-card .testimonial-card-tittle .testimonial-card-company, .pricing-section .container .pricing-list-item .pricing-features-list, .work-section .container .work-section-list-item .work-section-card figcaption .work-section-card-text, .hero-section .hero-description .container p, .hero-section .nav-and-socials .container .header-nav-list-item .header-nav-list-link, .contact-pop-up, .subtittle, body, .contacts-form .contacts-name::placeholder, .contacts-form .contacts-email::placeholder, .contacts-form .contacts-tel::placeholder, .contacts-form .contacts-city::placeholder, .contacts-form .contacts-message::placeholder, .contacts-form .contacts-name, .contacts-form .contacts-email, .contacts-form .contacts-tel, .contacts-form .contacts-city, .contacts-form .contacts-message, .btn-dark, .btn-light {
   font-size: clamp(14px, 1.3333333333vw, 16px);
   line-height: 133%;
@@ -150,6 +155,9 @@
   padding: 20px 30px;
   background-color: #091242;
   border: 1px solid #E0E0E0;
+  color: #ffffff;
+}
+.contacts-form .contacts-name::-moz-placeholder, .contacts-form .contacts-email::-moz-placeholder, .contacts-form .contacts-tel::-moz-placeholder, .contacts-form .contacts-city::-moz-placeholder, .contacts-form .contacts-message::-moz-placeholder {
   color: #ffffff;
 }
 .contacts-form .contacts-name::placeholder, .contacts-form .contacts-email::placeholder, .contacts-form .contacts-tel::placeholder, .contacts-form .contacts-city::placeholder, .contacts-form .contacts-message::placeholder {
@@ -394,7 +402,7 @@ ul {
     height: 40px;
   }
   .hero-section .hero-description .container h1,
-.hero-section .hero-description .container p {
+  .hero-section .hero-description .container p {
     max-width: 70%;
   }
 }
@@ -414,7 +422,7 @@ ul {
     display: none;
   }
   .hero-section .hero-description .container h1,
-.hero-section .hero-description .container p {
+  .hero-section .hero-description .container p {
     max-width: 100%;
   }
 }
@@ -524,7 +532,8 @@ ul {
 .work-section .container .work-section-list-item .work-section-card .work-section-card-img-wrapper img {
   display: block;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 1;
   transition: 0.8s ease-in;
 }
@@ -688,7 +697,8 @@ ul {
 .testimonial-section .container .testimonials-slider .testimonial-card .testimonial-card-header-info .testimonial-card-img-wrapper img {
   display: block;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .testimonial-section .container .testimonials-slider .testimonial-card .testimonial-card-header .testimonial-card-quote-icon {
   display: block;
@@ -737,7 +747,8 @@ ul {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .footer .footer-main-info {
   background-color: #091242;
@@ -943,6 +954,4 @@ ul {
   .contact-section .container .contacts-list-item .contacts-icon {
     width: 30px;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

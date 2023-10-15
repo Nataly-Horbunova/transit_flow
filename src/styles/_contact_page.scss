@@ -60,8 +60,7 @@
     @extend %input;
   }
 
-  .contacts-message,
-  {
+  .contacts-message{
     height: 160px;
     flex-basis: 100%;
     //color: $secondary-color;
